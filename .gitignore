@@ -1,0 +1,71 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native (continuous native generation — regenerate with `npx expo prebuild`)
+/ios
+/android
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.ipa
+*.apk
+*.aab
+*.apks
+
+# Metro
+.metro-health-check*
+
+# debug / logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+pnpm-debug.*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+*.pem
+
+# local env files — keep .env.example
+.env
+.env.*
+!.env.example
+
+# secrets / credentials
+credentials.json
+google-services.json
+GoogleService-Info.plist
+sentry.properties
+.sentryclirc
+*.keystore
+
+# EAS
+.eas/
+
+# tests
+coverage/
+
+# typescript
+*.tsbuildinfo
+
+# editors
+.idea/
+*.swp
+*.swo
+*~
+
+# watchman
+.watchmanconfig-local

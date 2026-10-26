@@ -1,0 +1,101 @@
+{
+  "expo": {
+    "name": "Jameen Maintenance",
+    "slug": "jameen-maintenance-staff",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "jameen-maintenance",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.jameen.maintenance",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Jameen Maintenance uses the camera to take your profile photo.",
+        "NSPhotoLibraryUsageDescription": "Jameen Maintenance uses your photo library to set your profile photo.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "app.jameen.maintenance",
+      "softwareKeyboardLayoutMode": "resize",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "maintenance.jameen.com",
+              "pathPrefix": "/reset-password"
+            },
+            {
+              "scheme": "jameen-maintenance",
+              "host": "*",
+              "pathPrefix": "/reset-password"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#E2711D",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": ["android.permission.CAMERA", "android.permission.POST_NOTIFICATIONS"]
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F5F5F6",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Jameen Maintenance uses your photos to set your profile photo.",
+          "cameraPermission": "Jameen Maintenance uses the camera to take your profile photo."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/android-icon-monochrome.png",
+          "color": "#E2711D",
+          "defaultChannel": "default"
+        }
+      ],
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["en", "hi", "bn", "mr", "pa", "te", "kn", "ta", "ml"],
+            "android": ["en", "hi", "bn", "mr", "pa", "te", "kn", "ta", "ml"]
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {}
+    },
+    "owner": "devzila",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
+}
