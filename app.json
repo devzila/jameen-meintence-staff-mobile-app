@@ -13,7 +13,18 @@
       "infoPlist": {
         "NSCameraUsageDescription": "Jameen Maintenance uses the camera to take your profile photo.",
         "NSPhotoLibraryUsageDescription": "Jameen Maintenance uses your photo library to set your profile photo.",
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleLocalizations": [
+          "en",
+          "hi",
+          "bn",
+          "mr",
+          "pa",
+          "te",
+          "kn",
+          "ta",
+          "ml"
+        ]
       }
     },
     "android": {
@@ -35,7 +46,10 @@
               "pathPrefix": "/reset-password"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ],
       "adaptiveIcon": {
@@ -44,7 +58,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "permissions": ["android.permission.CAMERA", "android.permission.POST_NOTIFICATIONS"]
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -81,8 +99,28 @@
         "expo-localization",
         {
           "supportedLocales": {
-            "ios": ["en", "hi", "bn", "mr", "pa", "te", "kn", "ta", "ml"],
-            "android": ["en", "hi", "bn", "mr", "pa", "te", "kn", "ta", "ml"]
+            "ios": [
+              "en",
+              "hi",
+              "bn",
+              "mr",
+              "pa",
+              "te",
+              "kn",
+              "ta",
+              "ml"
+            ],
+            "android": [
+              "en",
+              "hi",
+              "bn",
+              "mr",
+              "pa",
+              "te",
+              "kn",
+              "ta",
+              "ml"
+            ]
           }
         }
       ]
@@ -91,7 +129,10 @@
       "typedRoutes": true
     },
     "extra": {
-      "router": {}
+      "router": {},
+      "eas": {
+        "projectId": "2a0e085c-bb1d-49da-8225-3fd330c32392"
+      }
     },
     "owner": "devzila",
     "runtimeVersion": {
