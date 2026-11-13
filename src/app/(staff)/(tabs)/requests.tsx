@@ -101,7 +101,7 @@ export default function RequestsScreen() {
         ListFooterComponent={
           list.isFetchingNextPage ? (
             <ActivityIndicator style={styles.loading} color={colors.brand500} />
-          ) : null
+          ) : undefined
         }
       />
     </View>

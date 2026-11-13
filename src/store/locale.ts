@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { persistentStorage } from '@/services/persistentStorage';
 import i18n from '@/i18n';
 
 export const APP_LOCALES = ['en', 'hi', 'bn', 'mr', 'pa', 'te', 'kn', 'ta', 'ml'] as const;
@@ -44,7 +44,7 @@ export const useLocale = create<LocaleState>()(
     }),
     {
       name: 'jameen.maintenance.locale',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => persistentStorage),
       partialize: (state) => ({ locale: state.locale }),
       onRehydrateStorage: () => (state) => {
         const locale = isAppLocale(state?.locale) ? state.locale : 'en';
