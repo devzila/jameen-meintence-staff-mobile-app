@@ -1,12 +1,14 @@
 # Jameen Maintenance Staff Mobile App
 
-Native iOS and Android app for society maintenance staff (technicians, plumbers, electricians). Built with **React Native**, **Expo SDK 57**, and **TypeScript**. It talks to the existing Jameen API under `/v1/maintenance_staff`; it does **not** wrap the PWA in a WebView.
+Native iOS and Android app for society maintenance staff (technicians, plumbers, electricians). Built with **React Native**, **Expo SDK 58**, and **TypeScript**. It talks to the existing Jameen API under `/v1/maintenance_staff`; it does **not** wrap the PWA in a WebView.
 
 The sibling [`maintenance-staff-pwa`](../maintenance-staff-pwa) is the business and UX reference. The stack and conventions match [`security-staff-mobile-app`](../security-staff-mobile-app) and [`resident-mobile-app`](../resident-mobile-app): Expo Router, TanStack Query, Zustand, Expo SecureStore, i18next.
 
-This app targets **Expo SDK 57**, React Native **0.86**, React **19.2**.
+This app targets **Expo SDK 58**, React Native **0.88**, React **19.3**.
 
 See `docs/` for architecture, auth, and API notes.
+
+See [SDK 58 upgrade](docs/sdk-58-upgrade.md) for migration validation and the remaining native build/device QA checklist.
 
 ## Auth flow
 
@@ -56,7 +58,7 @@ Feature-oriented layout under `src/`:
 | Expo CLI   | via `npx expo` (do not install a global Expo CLI)                                 |
 | Jameen API | sibling [`jameen-api`](../jameen-api) running locally, or a reachable staging URL |
 
-iOS needs Xcode 16+ with a simulator runtime. Android needs Android Studio with SDK 36 and an emulator.
+Native builds require the SDK 58 toolchain; consult the [SDK 58 release notes](https://expo.dev/changelog/sdk-58) for supported Xcode and Android build tools. iOS builds require macOS or EAS Build.
 
 ## Local setup
 

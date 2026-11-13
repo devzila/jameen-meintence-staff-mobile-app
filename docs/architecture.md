@@ -4,7 +4,7 @@
 
 | Concern      | Choice                                                                                    |
 | ------------ | ----------------------------------------------------------------------------------------- |
-| Runtime      | Expo SDK 57 (managed, continuous native generation), React Native 0.86, React 19.2        |
+| Runtime      | Expo SDK 58 (managed, continuous native generation), React Native 0.88, React 19.3        |
 | Navigation   | Expo Router with typed routes                                                             |
 | Server state | TanStack Query (lists, detail, counts, mutations)                                         |
 | Client state | Zustand (session, company, locale, UI), persisted with AsyncStorage                       |

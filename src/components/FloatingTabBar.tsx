@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Keyboard, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import type { BottomTabBarProps } from 'expo-router/build/react-navigation/bottom-tabs';
+import type { BottomTabBarProps } from 'expo-router/tabs';
 import { colors, radii, shadows } from '@/constants/theme';
 import { useAppFonts } from '@/lib/fonts';
 import type { IconName } from '@/components/Icon';
@@ -27,7 +27,7 @@ export function useTabBarContentInset(edges: readonly string[] = ['top']) {
   return floatingTabBarOverlay(insets.bottom, edges.includes('bottom'));
 }
 
-export function FloatingTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+export function FloatingTabBar({ state, descriptors, emitter, navigateToTab }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
   const fonts = useAppFonts();
   const [keyboardVisible, setKeyboardVisible] = useState(false);
@@ -76,16 +76,16 @@ export function FloatingTabBar({ state, descriptors, navigation }: BottomTabBarP
               accessibilityState={{ selected: focused }}
               accessibilityLabel={options.tabBarAccessibilityLabel ?? label}
               onPress={() => {
-                const event = navigation.emit({
+                const event = emitter.emit({
                   type: 'tabPress',
                   target: route.key,
                   canPreventDefault: true,
                 });
                 if (!focused && !event.defaultPrevented) {
-                  navigation.navigate(route.name, route.params);
+                  navigateToTab(route.key);
                 }
               }}
-              onLongPress={() => navigation.emit({ type: 'tabLongPress', target: route.key })}
+              onLongPress={() => emitter.emit({ type: 'tabLongPress', target: route.key })}
               style={styles.item}
             >
               <View style={[styles.iconWrap, focused && styles.iconWrapActive]}>{icon}</View>
